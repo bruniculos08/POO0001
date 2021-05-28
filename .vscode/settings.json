@@ -1,0 +1,5 @@
+{
+    "autoimport.showNotifications": true,
+    "java.import.gradle.offline.enabled": true,
+    "java.saveActions.organizeImports": true
+}
