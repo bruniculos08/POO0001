@@ -1,4 +1,4 @@
-public class Retangulo extends Quadrado {
+public class Retangulo extends Quadrado { // Lembre-se: Devido a essa herança(extends Quadrado) há um quadrado implicito dentro do retângulo
     private int altura;
 
     public Retangulo(int x, int y, int base, int altura){
