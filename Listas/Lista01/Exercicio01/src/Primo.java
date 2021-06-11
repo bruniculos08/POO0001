@@ -12,4 +12,17 @@ public class Primo {
         }
         return 0;
     }
+
+    public int printprimos(int a, int b){
+        int k, n;
+        if (a > b) {
+            n = a;
+            k = b;
+        }
+        else if (a < b) {
+
+        }
+        for (int i = k; i < n; i++)
+        if verify(n) == 0;
+    }
 }
