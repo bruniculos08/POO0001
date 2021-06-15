@@ -11,7 +11,7 @@ public static void main(String[] args){           //* esta linha equivale ao int
 
         //& Processamento
         NumeroPrimo primo = new NumeroPrimo();                    //* cria um objeto chamado primo e da classe NumeroPrimo
-        List<Integer> listaDeNumeros = primo.getPrimosEntre(a,b); //* essa linha retorna os primos entre "a" e "b" para Lista "numeros"
+        List<Integer> listaDeNumeros = primo.getPrimosEntre(a,b); //* essa linha faz o objeto criado primo retorna os primos entre "a" e "b" para Lista "numeros" (pois isto é um método que criamos na classe do mesmo)
         //^ cria objeto List (de lista, uma classe em java): List <TipoClasse> nome
         //^ a classe "Integer" representa o tipo int
 
