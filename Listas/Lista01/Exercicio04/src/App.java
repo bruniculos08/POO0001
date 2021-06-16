@@ -8,7 +8,7 @@ public class App {
         RemoveLetra remove = new RemoveLetra();
 
         System.out.println("You want remove Vowels or Consonants? Type 'v' or 'c': ");
-        char answer = scan.next().charAt(0); //* scan para char
+        char answer = scan.next().charAt(0); //* scan para char (há mais de um modo; este não funciona para arquivos)
         if (answer == 'v'){
             newString = newString + remove.vowelsRemove(string);
         }
