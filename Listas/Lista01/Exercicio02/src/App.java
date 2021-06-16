@@ -19,8 +19,8 @@ public class App {
         Criarvetor criar = new Criarvetor(); //* cria um objeto da classe Criarvetor chamado "criar"
         T = criar.createVector(V, U); //* atribui ao vetor T um vetor criado pelo método createVector() do objeto "criar"
     
-        /* Ordenarvetor ordenar = new Ordenarvetor();
-        T = ordenar.ordVector(T); */
+        Ordenarvetor ordenar = new Ordenarvetor();
+        T = ordenar.ordVector(T); 
 
 
         for (int i = 0; i < T.length; i++){
