@@ -9,8 +9,7 @@ public class Medico extends Pessoa {
     }
 
     public void printdados(){
-        //println(nome);
-        //println(idade);
+        Getdados();
         System.out.println(especializacao);
     }
 }

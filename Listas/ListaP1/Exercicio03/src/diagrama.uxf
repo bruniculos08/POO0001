@@ -1,0 +1,20 @@
+<diagram program="umletino" version="14.4.0-SNAPSHOT"><zoom_level>10</zoom_level><help_text>Space for diagram notes</help_text><element><id>UMLClass</id><coordinates><x>351</x><y>40</y><w>210</w><h>110</h></coordinates><panel_attributes>Pessoa
+--
+- nome : String
+- cpf : int
+- email : String
+- tempoEmprestimo : int
+--
++ mostrarTempoEmprestimo () : int</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>561</x><y>220</y><w>210</w><h>90</h></coordinates><panel_attributes>Professor
+--
+- formacao : String
+- salario : float
+- departamento : String
+--
++ mostrarTempoEmprestimo () : int</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>141</x><y>210</y><w>210</w><h>90</h></coordinates><panel_attributes>Aluno
+--
+- curso : string
+- fase : String
+- matricula: int
+--
++ mostrarTempoEmprestimo () : int</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>531</x><y>140</y><w>70</w><h>100</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;10;50;80</additional_attributes></element><element><id>Relation</id><coordinates><x>311</x><y>140</y><w>60</w><h>90</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>40;10;10;70</additional_attributes></element></diagram>

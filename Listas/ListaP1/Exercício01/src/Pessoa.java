@@ -6,4 +6,9 @@ public class Pessoa {
         this.nome = nome;
         this.idade = idade;
     }
+
+    protected void Getdados(){
+        System.out.println(nome);
+        System.out.println(idade);
+    }
 }
