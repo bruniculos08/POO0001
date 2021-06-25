@@ -1,0 +1,27 @@
+<diagram program="umletino" version="14.4.0-SNAPSHOT"><zoom_level>10</zoom_level><help_text>Space for diagram notes</help_text><element><id>Relation</id><coordinates><x>70</x><y>340</y><w>40</w><h>130</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes><additional_attributes>20;10;10;110</additional_attributes></element><element><id>UMLClass</id><coordinates><x>70</x><y>190</y><w>440</w><h>160</h></coordinates><panel_attributes>Ar-condicionado
+--
+- ligado  : boolean
+- resfriando : boolean
+- temperaturaAmbiente : double
+- temperaturaUsuario : double
+--
++ Ar-condicionado(temperaturaAmbiente : double , temperaturaUsuario : double)
++ run() : void
++ setTemperaturaAmbiente(temperaturaAmbiente : double) : void
++ setEstado(ligado  : boolean, esquentando : boolean, esfriando : boolean) : void
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>160</x><y>80</y><w>30</w><h>130</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;-</panel_attributes><additional_attributes>10;10;10;110</additional_attributes></element><element><id>UMLClass</id><coordinates><x>80</x><y>30</y><w>210</w><h>60</h></coordinates><panel_attributes>Thread
+--
+
+--
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>320</x><y>450</y><w>250</w><h>80</h></coordinates><panel_attributes>Compressor
+--
+- ligado : boolean
+- modo direto : boolean
+--
++ setEstado(ligado : boolean, modo : boolean)</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>50</x><y>450</y><w>250</w><h>80</h></coordinates><panel_attributes>Ventilador
+--
+- ligado : boolean
+- modo direto : boolean
+--
++ setEstado(ligado : boolean, modo : boolean)
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>420</x><y>340</y><w>40</w><h>130</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes><additional_attributes>20;10;10;110</additional_attributes></element><element><id>Relation</id><coordinates><x>90</x><y>340</y><w>40</w><h>130</h></coordinates><panel_attributes>lt=&lt;&lt;.</panel_attributes><additional_attributes>20;10;10;110</additional_attributes></element><element><id>Relation</id><coordinates><x>400</x><y>340</y><w>40</w><h>130</h></coordinates><panel_attributes>lt=&lt;&lt;.</panel_attributes><additional_attributes>20;10;10;110</additional_attributes></element><element><id>Relation</id><coordinates><x>190</x><y>80</y><w>30</w><h>130</h></coordinates><panel_attributes>lt=&lt;&lt;.</panel_attributes><additional_attributes>10;10;10;110</additional_attributes></element><element><id>Relation</id><coordinates><x>210</x><y>80</y><w>30</w><h>130</h></coordinates><panel_attributes>lt=&lt;&lt;.</panel_attributes><additional_attributes>10;110;10;10</additional_attributes></element></diagram>
