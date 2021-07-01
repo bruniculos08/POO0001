@@ -1,4 +1,4 @@
-import javax.swing.*;
+import javax.swing.*; //* asterisco importa tudo de uma biblioteca
 import java.awt.*;
 public class App {
     public static void main(String[] args){
