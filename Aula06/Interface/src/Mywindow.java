@@ -1,16 +1,8 @@
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.*;
-//import java.awt.event.ActionEvent;
-import javax.swing.Action;
-//import java.awt.event.ActionListener;
-import javax.swing.event.ChangeEvent;
-import javax.swing.event.ChangeListener;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 
-
-public class Mywindow extends JFrame implements ActionListener{ //^ implementar uma interface, pois esta não tem código, o código tem que ser escrito antes da implementação
+public class Mywindow extends JFrame implements ActionListener{ 
+                                                  //^ implementar uma interface, pois esta não tem código, o código tem que ser escrito antes da implementação
     JLabel label = new JLabel("This is a label"); //^ Objeto Label (uma região com um texto ou algo do tipo)
     JButton button1 = new JButton("Okay");        //^ Objeto Button (botão escrito "Okay")
     JButton button2 = new JButton("Hey");
