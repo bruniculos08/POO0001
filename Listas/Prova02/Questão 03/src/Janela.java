@@ -3,8 +3,8 @@ import java.awt.*;
 import java.awt.event.*;
 
 public class Janela extends JFrame implements ActionListener{
-    JButton button1 = new JButton("Button 1");                  
-    JButton button2 = new JButton("Button 2");                  
+    JButton button1 = new JButton("Botao 1");                  
+    JButton button2 = new JButton("Botao 2");                  
 
     public Janela(){
         super("Janela");

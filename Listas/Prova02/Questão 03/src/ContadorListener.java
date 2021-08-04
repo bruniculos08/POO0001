@@ -1,5 +1,5 @@
 public class ContadorListener implements Listener {
-    void oValorMudou(int novoValor){
-        System.out.println("Ocorreu alteração no contador para: " + novoValor);
+    public void oValorMudou(int novoValor){
+        System.out.println("Ocorreu alteracao no contador para: " + novoValor);
     }
 }
