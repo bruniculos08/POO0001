@@ -3,7 +3,7 @@ import java.util.ArrayList;
 
 public class Contador {
     private int valor = 0;
-    private ContadorListener observador = new ContadorListener();
+    public ContadorListener observador = new ContadorListener();
     public ArmazenaListener armazena = ArmazenaListener.getInstance();
     
     public Contador(){
