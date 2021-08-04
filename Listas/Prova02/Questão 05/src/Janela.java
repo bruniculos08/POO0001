@@ -4,7 +4,8 @@ import java.awt.event.*;
 
 public class Janela extends JFrame implements ActionListener{
     JButton button1 = new JButton("Button 1");                  
-    JButton button2 = new JButton("Button 2");                  
+    JButton button2 = new JButton("Button 2");     
+    Contador valores = new Contador();             
 
     public Janela(){
         super("Janela");
@@ -31,10 +32,12 @@ public class Janela extends JFrame implements ActionListener{
   
       public void actionPerformed(ActionEvent e){
         if (e.getSource() == button1) {
-            System.out.println("Botao 1 pressionado");
+            valores.incremetarValor();
+            //System.out.println("incrementando");
         }
         if (e.getSource() == button2) {
-            System.out.println("Botao 2 pressionado");
+            valores.decrementarValor();
+            //System.out.println("decrementando");
         }
     }
 

@@ -17,7 +17,7 @@ public class ArmazenaListener {
     
     public void addLista(ContadorListener x){
         lista.add(x);
-        System.out.println("observador adicionado a lista");
+        //System.out.println("observador adicionado a lista");
     }
 
     public static void chamaContadores(){
