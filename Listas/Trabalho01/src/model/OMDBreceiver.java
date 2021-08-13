@@ -19,8 +19,8 @@ import java.net.Socket;
 public class OMDBreceiver {
     private Socket socket; // cria um socket (objeto para fazer conexões de rede)
 
-    public void fazerConexao() throws IOException {
-        socket = new Socket("https://www.omdbapi.com", 80); //associa o objeto socket à um socket ligado ao site OMDB 
+    public void fazerConexao() throws IOException, UnknownHostException {
+        socket = new Socket("www.omdbapi.com", 443); //associa o objeto socket à um socket ligado ao site OMDB 
     }                                                       // na porta 80
 
     public void fecharConexao() throws IOException {        // desliga o socket
