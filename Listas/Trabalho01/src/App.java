@@ -11,10 +11,6 @@ public class App {
     public static void main(String[] args) throws Exception {
         System.out.println("Hello, World!");
         OMDBhelper receiver = new OMDBhelper();
-        
-        
-        
-        
         receiver.requisitarDadosDoFilme("Pulp+Fiction");
     }
 }

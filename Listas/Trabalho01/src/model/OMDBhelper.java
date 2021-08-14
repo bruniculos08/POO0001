@@ -19,7 +19,7 @@ public class OMDBhelper {
     public void requisitarDadosDoFilme(String nomeDoFilme) {
         ArrayList<String> requisicao = new ArrayList<String>(1);// requisição escrita em formato JSON
         
-        requisicao.add("GET /?t=" + nomeDoFilme + "&apikey=138637f6 HTTP/1.0");
+        requisicao.add("GET /?t=" + nomeDoFilme + "&apikey=d5077079 HTTP/1.0");
         requisicao.add("Host: www.omdbapi.com");
 
         for(String s : requisicao) {
