@@ -6,11 +6,12 @@ import java.net.Socket;
 
 import model.OMDBhelper;
 import model.OMDBreceiver;
+import views.TelaInicial;
 
 public class App {
     public static void main(String[] args) throws Exception {
-        System.out.println("Hello, World!");
-        OMDBhelper receiver = new OMDBhelper();
-        receiver.requisitarDadosDoFilme("Pulp+Fiction");
+        OMDBhelper helper = new OMDBhelper();
+        helper.requisitarDadosDoFilme("Pulp+Fiction");
+        TelaInicial janela = new TelaInicial();
     }
 }
