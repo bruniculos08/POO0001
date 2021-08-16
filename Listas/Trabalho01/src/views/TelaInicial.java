@@ -30,16 +30,34 @@ public class TelaInicial extends JFrame implements ActionListener{
     private void setTextArea(){
         text.setMaximumSize(new Dimension(1, 10));
         text.setLineWrap(true);
-        //text.addKeyListener(new MKeyListener());
-        layout.addComponent(enter);
-        enter.setClickShortcut(KeyCode.ENTER);
+
 
         panel.add(text);
         panel.add(submit);
         panel.add(label);
         add(panel);
 
+        text.addKeyListener(new KeyAdapter(){
+            public void keyPressed(KeyEvent event) {
+                    if (event.getKeyCode() == KeyEvent.VK_ENTER){
+                        text.setEditable(false);
+                        text.setText(null);
+                        submit.doClick();
+                    }
+                    else {
+                        text.setEditable(true);
+                    }
+                }
+            });
+
         setSize(500,500);
         show();
+    }
+
+    public void actionPerformed(ActionEvent e){
+        if (e.getSource() == submit) {
+            label.setText("submited");
+            text.setText(null);
+        }
     }
 }
