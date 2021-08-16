@@ -7,6 +7,7 @@ import java.net.Socket;
 import model.OMDBhelper;
 import model.OMDBreceiver;
 import views.TelaInicial;
+import org.json.simple.JSONObject;
 
 public class App {
     public static void main(String[] args) throws Exception {
