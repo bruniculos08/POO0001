@@ -1,4 +1,6 @@
 package views;
+import model.OMDBhelper;
+import presenter.RecebeNome;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
@@ -41,7 +43,6 @@ public class TelaInicial extends JFrame implements ActionListener{
             public void keyPressed(KeyEvent event) {
                     if (event.getKeyCode() == KeyEvent.VK_ENTER){
                         text.setEditable(false);
-                        text.setText(null);
                         submit.doClick();
                     }
                     else {
@@ -57,7 +58,15 @@ public class TelaInicial extends JFrame implements ActionListener{
     public void actionPerformed(ActionEvent e){
         if (e.getSource() == submit) {
             label.setText("submited");
+            String name = text.getText();
             text.setText(null);
+            System.out.println(name);
+            try {
+                RecebeNome envia = new RecebeNome(name);
+            }
+            catch (Exception a){
+                a.printStackTrace();
+            }
         }
     }
 }

@@ -10,8 +10,6 @@ import views.TelaInicial;
 
 public class App {
     public static void main(String[] args) throws Exception {
-        OMDBhelper helper = new OMDBhelper();
-        helper.requisitarDadosDoFilme("Pulp+Fiction");
         try {
             TelaInicial janela = new TelaInicial();
         }

@@ -1,5 +1,5 @@
 package model;
-
+import presenter.RecebeNome;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
