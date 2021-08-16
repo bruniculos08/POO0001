@@ -9,15 +9,17 @@ import java.util.ArrayList;
 
 public class OMDBhelper {
     public void requisitarDadosDoFilme(String nomeDoFilme) {
-        ArrayList<String> requisicao = new ArrayList<String>(1);// requisição escrita em formato JSON
+        ArrayList<String> requisicao = new ArrayList<String>();// requisição escrita em formato JSON
         
+        nomeDoFilme = nomeDoFilme.replace(' ', '+');
+
         requisicao.add("GET /?t=" + nomeDoFilme + "&apikey=d5077079 HTTP/1.0");
         requisicao.add("Host: www.omdbapi.com");
 
-        for (String s : requisicao) {
+        /* for (String s : requisicao) {
             System.out.println(s);
         }
-        System.out.println();
+        System.out.println(); */
 
         OMDBreceiver manager = new OMDBreceiver(); // cria um objeto para receber e enviar (OMDBreceiver)
         try {                                      // tenta executar as seguintes operações da classe OMDBreceiver

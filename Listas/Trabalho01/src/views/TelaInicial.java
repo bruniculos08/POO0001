@@ -61,12 +61,12 @@ public class TelaInicial extends JFrame implements ActionListener{
             String name = text.getText();
             text.setText(null);
             System.out.println(name);
-            try {
+            //try {
                 RecebeNome envia = new RecebeNome(name);
-            }
-            catch (Exception a){
-                a.printStackTrace();
-            }
+            //}
+            //catch (Exception a){
+                //System.out.println("Erro: " + a);
+            //}
         }
     }
 }
