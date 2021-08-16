@@ -2,40 +2,44 @@ package views;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
+import java.util.*;
 
-
-public class TelaInicial extends JFrame {
+public class TelaInicial extends JFrame implements ActionListener{
     private JTextArea text;
-
+    private JFrame textfield;
+    private JLabel label;
+    private JPanel panel;
+    private JButton submit;
+    private String movieName;   
 
     public TelaInicial() {
         super("Main Menu");
-        startItems();
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setSettings();
     }
 
-
-    private void startItems() {
-    }
-    
     private void setSettings() {
-        setSize(500,500);
-        setLayout(new BorderLayout());
+        label = new JLabel();
+        submit = new JButton("submit");
+        submit.addActionListener(this);
+        text = new JTextArea(1, 10);
+        panel = new JPanel();
         setTextArea();
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setVisible(true);
     }
 
     private void setTextArea(){
-        JTextArea textArea = new JTextArea("This is a text area: ");
-        textArea.setCaretPosition(textArea.getDocument().getLength());
-        textArea.setRows(20);
-        textArea.setColumns(50);
-        textArea.setEditable(true);
-        getContentPane().add(new JScrollPane(textArea), BorderLayout.CENTER);
-        //JScrollPane scrollPane = new JScrollPane(textArea);
-        //scrollPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
-        //scrollPane.setPreferredSize(new Dimension(250, 250));
-        add(textArea);
+        text.setMaximumSize(new Dimension(1, 10));
+        text.setLineWrap(true);
+        //text.addKeyListener(new MKeyListener());
+        layout.addComponent(enter);
+        enter.setClickShortcut(KeyCode.ENTER);
+
+        panel.add(text);
+        panel.add(submit);
+        panel.add(label);
+        add(panel);
+
+        setSize(500,500);
+        show();
     }
 }

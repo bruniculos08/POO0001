@@ -12,6 +12,11 @@ public class App {
     public static void main(String[] args) throws Exception {
         OMDBhelper helper = new OMDBhelper();
         helper.requisitarDadosDoFilme("Pulp+Fiction");
-        TelaInicial janela = new TelaInicial();
+        try {
+            TelaInicial janela = new TelaInicial();
+        }
+        catch (Exception e) {
+            e.printStackTrace();
+        }        
     }
 }
