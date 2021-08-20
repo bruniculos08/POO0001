@@ -1,35 +1,44 @@
 package model;
-import presenter.RecebeNome;
-import java.io.BufferedReader;
+import presenter.RecebedorDeNome;
+import presenter.RecebedorDeDados;
 import java.io.IOException;
-import java.io.InputStreamReader;
-import java.io.PrintStream;
 import java.net.Socket;
 import java.util.ArrayList;
 
-public class OMDBhelper {
-    public void requisitarDadosDoFilme(String nomeDoFilme) {
-        ArrayList<String> requisicao = new ArrayList<String>();// requisição escrita em formato JSON
-        
-        nomeDoFilme = nomeDoFilme.replace(' ', '+');
+public class OMDBHelper {
+    private ArrayList<String> requisicao;
+    private OMDBReceiver receiver;                      // Objeto para receber e enviar (OMDBReceiver)
 
+    public void requisitarDadosDoFilme(String nomeDoFilme) {
+            montarRequisicao(nomeDoFilme);
+            enviarRequisicao();
+            lerARespostaAoEnvio();                     
+    }
+
+    public void montarRequisicao(String nomeDoFilme) {
+        requisicao = new ArrayList<String>();           // Requisição escrita em formato String de JSON
         requisicao.add("GET /?t=" + nomeDoFilme + "&apikey=d5077079 HTTP/1.0");
         requisicao.add("Host: www.omdbapi.com");
+    }
 
-        /* for (String s : requisicao) {
-            System.out.println(s);
-        }
-        System.out.println(); */
+    public void enviarRequisicao(){
+        try {                                           
+            receiver = new OMDBReceiver();              // Tenta executar as seguintes operações da classe OMDBreceiver
+            receiver.fazerConexao();                
+            receiver.escreverARequisicao(requisicao);  
+        } catch (IOException e) {                       // Em caso de ocorrência de erro na execução de algum dos métodos
+            e.printStackTrace();                        // ... printa o erro
+        }        
+    }
 
-        OMDBreceiver manager = new OMDBreceiver(); // cria um objeto para receber e enviar (OMDBreceiver)
-        try {                                      // tenta executar as seguintes operações da classe OMDBreceiver
-            manager.fazerConexao();                
-            manager.escreverARequisicao(requisicao);    
-            String response = manager.lerAResposta();
-            manager.fecharConexao();
+    public void lerARespostaAoEnvio(){
+        try {
+            String response = receiver.lerAResposta();
+            receiver.fecharConexao();
             System.out.println(response);
-        } catch (IOException e) {                 // em caso de ocorrência de erro na execução de algum dos métodos
-            e.printStackTrace();                  // printa o erro
+        } catch (IOException e) {
+            e.printStackTrace();
         }
+        RecebedorDeDados recebedorDeDados = new RecebedorDeDados();
     }
 }

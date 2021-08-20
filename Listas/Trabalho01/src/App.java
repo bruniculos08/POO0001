@@ -3,11 +3,9 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.PrintStream;
 import java.net.Socket;
-
-import model.OMDBhelper;
-import model.OMDBreceiver;
+import model.OMDBHelper;
+import model.OMDBReceiver;
 import views.TelaInicial;
-import org.json.simple.JSONObject;
 
 public class App {
     public static void main(String[] args) throws Exception {

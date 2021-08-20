@@ -1,10 +1,11 @@
 package views;
 import model.OMDBhelper;
-import presenter.RecebeNome;
+import presenter.RecebedorDeNome;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 import java.util.*;
+
 
 public class TelaInicial extends JFrame implements ActionListener{
     private JTextArea text;
@@ -12,11 +13,10 @@ public class TelaInicial extends JFrame implements ActionListener{
     private JLabel label;
     private JPanel panel;
     private JButton submit;
-    private String movieName;   
+    private String movieName;
 
     public TelaInicial() {
         super("Main Menu");
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setSettings();
     }
 
@@ -26,19 +26,27 @@ public class TelaInicial extends JFrame implements ActionListener{
         submit.addActionListener(this);
         text = new JTextArea(1, 10);
         panel = new JPanel();
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setTextArea();
     }
 
     private void setTextArea(){
-        text.setMaximumSize(new Dimension(1, 10));
-        text.setLineWrap(true);
+        setTextListener();
+        addTodosOsItens();
+        setSize(500,500);
+        show();
+    }
 
-
+    public void addTodosOsItens(){
         panel.add(text);
         panel.add(submit);
         panel.add(label);
         add(panel);
+    }
 
+    public void setTextListener(){
+        text.setMaximumSize(new Dimension(1, 10));
+        text.setLineWrap(true);
         text.addKeyListener(new KeyAdapter(){
             public void keyPressed(KeyEvent event) {
                     if (event.getKeyCode() == KeyEvent.VK_ENTER){
@@ -50,23 +58,29 @@ public class TelaInicial extends JFrame implements ActionListener{
                     }
                 }
             });
-
-        setSize(500,500);
-        show();
     }
 
     public void actionPerformed(ActionEvent e){
         if (e.getSource() == submit) {
-            label.setText("submited");
-            String name = text.getText();
-            text.setText(null);
-            System.out.println(name);
-            //try {
-                RecebeNome envia = new RecebeNome(name);
-            //}
-            //catch (Exception a){
-                //System.out.println("Erro: " + a);
-            //}
+            enviarParaPesquisa();
+            limparAreaDeTexto();
+            trocarTela();
         }
+    }
+    
+    public void trocarTela(){
+        TelaExibir telaExibir = new TelaExibir();
+        dispose();
+    }
+
+    public void limparAreaDeTexto(){
+        label.setText("submited");
+        text.setText(null);
+    }
+
+    public void enviarParaPesquisa(){
+        String name = text.getText();
+        System.out.println(name);
+        RecebedorDeNome envia = new RecebedorDeNome(name);
     }
 }
