@@ -1,5 +1,5 @@
 package views;
-import model.OMDBhelper;
+import model.OMDBHelper;
 import presenter.RecebedorDeNome;
 import javax.swing.*;
 import java.awt.*;

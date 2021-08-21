@@ -35,10 +35,10 @@ public class OMDBHelper {
         try {
             String response = receiver.lerAResposta();
             receiver.fecharConexao();
+            RecebedorDeDados recebedorDeDados = new RecebedorDeDados(response);
             System.out.println(response);
         } catch (IOException e) {
             e.printStackTrace();
         }
-        RecebedorDeDados recebedorDeDados = new RecebedorDeDados();
     }
 }
