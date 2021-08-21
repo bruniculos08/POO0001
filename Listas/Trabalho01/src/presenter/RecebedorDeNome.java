@@ -5,12 +5,11 @@ import model.OMDBReceiver;
 public class RecebedorDeNome {
     public RecebedorDeNome(String name){
         name = name.replace(' ', '+');
-        OMDBHelper helper = new OMDBHelper();
-        helper.requisitarDadosDoFilme(name);
+        enviarParaPesquisa(name);
     }
 
     public void enviarParaPesquisa(String name) {
         OMDBHelper helper = new OMDBHelper();
-        helper.requisitarDadosDoFilme(name);
+        helper.iniciarRequisitarDados(name);
     }
 }

@@ -80,7 +80,7 @@ public class TelaInicial extends JFrame implements ActionListener{
 
     public void enviarParaPesquisa(){
         String name = text.getText();
-        System.out.println(name);
+        //System.out.println(name);
         RecebedorDeNome envia = new RecebedorDeNome(name);
     }
 }

@@ -7,12 +7,32 @@ import java.util.ArrayList;
 
 public class OMDBHelper {
     private ArrayList<String> requisicao;
-    private OMDBReceiver receiver;                      // Objeto para receber e enviar (OMDBReceiver)
+    //private OMDBReceiver receiver;                      // Objeto para receber e enviar (OMDBReceiver)
+    private String nomeDoFilme;
 
-    public void requisitarDadosDoFilme(String nomeDoFilme) {
+    private Runnable runnable = new Runnable() {
+        @Override
+        public void run() {
+            if(nomeDoFilme != null){
+                OMDBReceiver receiver = new OMDBReceiver();
+                String dadosDoFilme = requisitarDadosDoFilme(nomeDoFilme);
+                RecebedorDeDados recebedorDeDados = new RecebedorDeDados(dadosDoFilme);
+            }
+        }
+    };
+
+    public void iniciarRequisitarDados(String nomeDoFilme) {
+        this.nomeDoFilme = nomeDoFilme;
+        (new Thread(runnable)).start();
+    }
+
+
+    public String requisitarDadosDoFilme(String nomeDoFilme) {
             montarRequisicao(nomeDoFilme);
-            enviarRequisicao();
-            lerARespostaAoEnvio();                     
+            OMDBReceiver receiver = new OMDBReceiver();
+            enviarRequisicao(receiver);
+            String response = lerARespostaAoEnvio(receiver);
+            return response;
     }
 
     public void montarRequisicao(String nomeDoFilme) {
@@ -21,9 +41,8 @@ public class OMDBHelper {
         requisicao.add("Host: www.omdbapi.com");
     }
 
-    public void enviarRequisicao(){
-        try {                                           
-            receiver = new OMDBReceiver();              // Tenta executar as seguintes operações da classe OMDBreceiver
+    public void enviarRequisicao(OMDBReceiver receiver){
+        try {                                           // Tenta executar as seguintes operações da classe OMDBreceiver
             receiver.fazerConexao();                
             receiver.escreverARequisicao(requisicao);  
         } catch (IOException e) {                       // Em caso de ocorrência de erro na execução de algum dos métodos
@@ -31,14 +50,17 @@ public class OMDBHelper {
         }        
     }
 
-    public void lerARespostaAoEnvio(){
+    public String lerARespostaAoEnvio(OMDBReceiver receiver){
+        String response = null;
         try {
-            String response = receiver.lerAResposta();
+            response = receiver.lerAResposta();
             receiver.fecharConexao();
-            RecebedorDeDados recebedorDeDados = new RecebedorDeDados(response);
-            System.out.println(response);
+            return response;
+            //RecebedorDeDados recebedorDeDados = new RecebedorDeDados(response);
+            //System.out.println(response);
         } catch (IOException e) {
             e.printStackTrace();
         }
+        return response;
     }
 }
