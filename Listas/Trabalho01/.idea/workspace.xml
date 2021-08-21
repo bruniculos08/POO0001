@@ -2,16 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c8aa5192-da5d-4dd2-bd03-681eea676166" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/model/AmazonConnectionManager.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/model/OMDBHelperListener.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/model/PosterHelper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/model/PosterHelperListener.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Trabalho01/model/OMDBHelper.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Trabalho01/model/OMDBHelper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Trabalho01/views/TelaInicial.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Trabalho01/views/TelaInicial.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/OMDBhelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/OMDBhelper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/presenter/RecebedorDeNome.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/presenter/RecebedorDeNome.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/TelaInicial.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/TelaInicial.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
