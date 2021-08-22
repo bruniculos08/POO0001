@@ -1,5 +1,6 @@
 package views;
 import model.OMDBHelper;
+import presenter.RecebedorDeDados;
 import presenter.RecebedorDeNome;
 import javax.swing.*;
 import java.awt.*;
@@ -11,9 +12,11 @@ public class TelaExibir extends JFrame implements ActionListener{
     private JTextArea text;
     private JFrame textfield;
     private JLabel label;
+    private JLabel picLabel;
     private JPanel panel;
     private JButton voltar;
     private String movieName;
+    private ViewListener1 viewListener;
     
     public TelaExibir() {
         super("Exibition Menu");
@@ -43,5 +46,23 @@ public class TelaExibir extends JFrame implements ActionListener{
             TelaInicial janela = new TelaInicial();
             dispose();
         }
+    }
+
+    public void setViewListener(RecebedorDeDados recebedorDeDados) {
+        viewListener = new ViewListener1(recebedorDeDados);
+    }
+
+    public void RecarregarSemPoster(String dados) {
+        System.out.println("RecarregarSemPoster\n");
+        text.setText(dados);
+        panel.add(text);
+    }
+
+    public void RecarrregarComPoster(String dados, Image poster) {
+        System.out.println("RecarregarComPoster\n");
+        picLabel = new JLabel(new ImageIcon(poster));
+        panel.add(picLabel);
+        text.setText(dados);
+        panel.add(text);
     }
 }

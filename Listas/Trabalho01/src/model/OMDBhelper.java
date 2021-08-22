@@ -1,31 +1,69 @@
 package model;
 import presenter.RecebedorDeNome;
 import presenter.RecebedorDeDados;
+
+import java.awt.*;
 import java.io.IOException;
 import java.net.Socket;
+import java.net.URL;
 import java.util.ArrayList;
+
+import static java.lang.Thread.sleep;
 
 public class OMDBHelper {
     private ArrayList<String> requisicao;
-    //private OMDBReceiver receiver;                      // Objeto para receber e enviar (OMDBReceiver)
+    private RecebedorDeDados recebedorDeDados;
+    private  OMDBHelperListener1 omdbHelperListener1;
     private String nomeDoFilme;
+    private OMDBReceiver receiver = new OMDBReceiver();
+    private PosterHelperListener1 posterHelperListener1;
+    private PosterHelper posterHelper;
 
-    private Runnable runnable = new Runnable() {
+    private Runnable runnable1 = new Runnable() {
         @Override
         public void run() {
             if(nomeDoFilme != null){
-                OMDBReceiver receiver = new OMDBReceiver();
                 String dadosDoFilme = requisitarDadosDoFilme(nomeDoFilme);
-                RecebedorDeDados recebedorDeDados = new RecebedorDeDados(dadosDoFilme);
+                recebedorDeDados = new RecebedorDeDados();
+                String dadosNull = "{\"Response\":\"False\",\"Error\":\"Movie not found!\"}\n";
+                if (!dadosDoFilme.equalsIgnoreCase(dadosNull)) {
+                    omdbHelperListener1 = new OMDBHelperListener1(recebedorDeDados);
+                    omdbHelperListener1.chegaramOsDadosDoFilme(dadosDoFilme);
+                    (new Thread(runnable2)).start();
+                    posterHelperListener1 = new PosterHelperListener1(recebedorDeDados);
+                } else {
+                    recebedorDeDados.EnviarDadosParaTelaSemPoster("Not found the movie");
+                }
+                Thread.currentThread().stop();
             }
+        }
+    };
+
+    private Runnable runnable2 = new Runnable() {
+        @Override
+        public void run() {
+            posterHelper = new PosterHelper(recebedorDeDados.posterUrl);
+            posterHelper.requestPoster();
+            while (posterHelper.poster == null){
+                try {
+                    System.out.println("Loading poster...");
+                    if (recebedorDeDados.encerrandoSegundaThread == true){
+                        Thread.currentThread().stop();
+                    }
+                    sleep(5000);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+            }
+            posterHelperListener1.chegouOPoster(posterHelper.poster);
+            Thread.currentThread().stop();
         }
     };
 
     public void iniciarRequisitarDados(String nomeDoFilme) {
         this.nomeDoFilme = nomeDoFilme;
-        (new Thread(runnable)).start();
+        (new Thread(runnable1)).start();
     }
-
 
     public String requisitarDadosDoFilme(String nomeDoFilme) {
             montarRequisicao(nomeDoFilme);
@@ -55,7 +93,7 @@ public class OMDBHelper {
         try {
             response = receiver.lerAResposta();
             receiver.fecharConexao();
-            return response;
+            //return response;
             //RecebedorDeDados recebedorDeDados = new RecebedorDeDados(response);
             //System.out.println(response);
         } catch (IOException e) {

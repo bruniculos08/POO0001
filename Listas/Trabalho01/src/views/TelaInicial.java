@@ -69,7 +69,7 @@ public class TelaInicial extends JFrame implements ActionListener{
     }
     
     public void trocarTela(){
-        TelaExibir telaExibir = new TelaExibir();
+        //TelaExibir telaExibir = new TelaExibir();
         dispose();
     }
 

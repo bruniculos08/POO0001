@@ -1,8 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="c8aa5192-da5d-4dd2-bd03-681eea676166" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/model/OMDBHelperListener1.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/model/PosterHelperListener1.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/views/ViewListener.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/views/ViewListener1.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Trabalho01/model/AmazonConnectionManager.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Trabalho01/model/PosterHelper$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Trabalho01/model/PosterHelper$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Trabalho01/model/PosterHelper.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Trabalho01/model/PosterHelper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/AmazonConnectionManager.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/OMDBhelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/OMDBhelper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/PosterHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/PosterHelper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/PosterHelperListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/PosterHelperListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/presenter/RecebedorDeDados.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/presenter/RecebedorDeDados.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/TelaExibir.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/TelaExibir.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/TelaInicial.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/TelaInicial.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,6 +39,14 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
   </component>
   <component name="ProjectCodeStyleSettingsMigration">
     <option name="version" value="1" />
