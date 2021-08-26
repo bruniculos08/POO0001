@@ -25,19 +25,19 @@ public class OMDBReceiver {
     }
 
     public void escreverARequisicao(ArrayList<String> requisicao) throws IOException { 
-        PrintStream ps = new PrintStream(socket.getOutputStream()); // A classe printstream é para objetos (nesse caso o "ps") que
-                                                                    // ... enviarão um print à uma saída (nesse caso à saída do socket)        
+        PrintStream ps = new PrintStream(socket.getOutputStream());                     // A classe printstream é para objetos (nesse caso o "ps") que
+                                                                                        // ... enviarão um print à uma saída (nesse caso à saída do socket)
         for(String item : requisicao){                  
-            ps.println(item);                                       // Objeto da classe printstream "ps" envia a string "requisicao" à sua saída
+            ps.println(item);                                                           // Objeto da classe printstream "ps" envia a string "requisicao" à sua saída
         }
         ps.println();
     }
 
     public String lerAResposta() {
-        String response = null;                            // Objeto string nulo
+        String response = null;                                                         // Objeto string nulo
         try { 
-           response = lendoDoSocketUsandoBufferedReader(); // Ler à ultima resposta do servidor e coloca-lá dentro da
-                                                           // ...string response
+           response = lendoDoSocketUsandoBufferedReader();                              // Ler à ultima resposta do servidor e coloca-lá dentro da
+                                                                                        // ...string response
         } catch (IOException e) {      
             // Se não ler à resposta (Excessão) do servidor printa a seguinte mensagem
             System.out.println("Erro na leitura da resposta: " + e.getMessage());
@@ -47,15 +47,15 @@ public class OMDBReceiver {
     }
 
     private String lendoDoSocketUsandoBufferedReader() throws IOException {
-        InputStreamReader ir = new InputStreamReader(socket.getInputStream()); //objeto recebe o que o servidor envia (entrada)
-        BufferedReader br = new BufferedReader(ir); // buffer le e armazena em linhas, inputstreamreader le e recebe
+        InputStreamReader ir = new InputStreamReader(socket.getInputStream());          //objeto recebe o que o servidor envia (entrada)
+        BufferedReader br = new BufferedReader(ir);                                     // buffer le e armazena em linhas, inputstreamreader le e recebe
         return lerLinhas(br);
         
     }
 
     private String lerLinhas(BufferedReader br) throws IOException{
         String response = "";
-        String line = br.readLine(); // le as linhas armazenadas no BufferedReader e passa pra String response
+        String line = br.readLine();                                                    // le as linhas armazenadas no BufferedReader e passa pra String response
         while (line != null) {
             response += line;
             response += "\n";

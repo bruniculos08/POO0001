@@ -10,7 +10,6 @@ public class PosterHelper {
     private PosterHelperListener listener;
     public Image poster = null;
     private Runnable runnable;
-    //AmazonConnectionManager connectionManager = new AmazonConnectionManager();
 
     public PosterHelper(String posterURL){
         this.posterURL = posterURL;

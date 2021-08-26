@@ -93,9 +93,6 @@ public class OMDBHelper {
         try {
             response = receiver.lerAResposta();
             receiver.fecharConexao();
-            //return response;
-            //RecebedorDeDados recebedorDeDados = new RecebedorDeDados(response);
-            //System.out.println(response);
         } catch (IOException e) {
             e.printStackTrace();
         }

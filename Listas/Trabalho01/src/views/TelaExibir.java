@@ -56,6 +56,7 @@ public class TelaExibir extends JFrame implements ActionListener{
         System.out.println("RecarregarSemPoster\n");
         text.setText(dados);
         panel.add(text);
+        text.setEditable(false);
     }
 
     public void RecarrregarComPoster(String dados, Image poster) {
