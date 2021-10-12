@@ -4,13 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c8aa5192-da5d-4dd2-bd03-681eea676166" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Trabalho01/model/PosterHelper$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Trabalho01/model/PosterHelper$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Trabalho01/model/PosterHelper.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Trabalho01/model/PosterHelper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/PosterHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/PosterHelper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/TelaExibir.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/TelaExibir.java" afterDir="false" />
-    </list>
+    <list default="true" id="c8aa5192-da5d-4dd2-bd03-681eea676166" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
